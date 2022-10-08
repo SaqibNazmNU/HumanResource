@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 
 public class Employee {
@@ -14,9 +13,6 @@ public class Employee {
 	private String phone;
 	private String email;
 	private Image photo;
-	
-	public Employee() {
-	}
 	
 	public Employee(String name, String empId, int age, Gender gender, LocalDate startDate, String level, String teamInfo, String position, String phone, String email, Image photo) {
 		this.name = name;
@@ -42,10 +38,6 @@ public class Employee {
 	
 	public String getEmpId() {
 		return empId;
-	}
-	
-	public void setEmpId(String empId) {
-		this.empId = empId;
 	}
 	
 	public int getAge() {
@@ -116,7 +108,7 @@ public class Employee {
 		return photo;
 	}
 	
-	public void setPhoto(BufferedImage photo) {
+	public void setPhoto(Image photo) {
 		this.photo = photo;
 	}
 }

@@ -42,9 +42,7 @@ public class HomeView extends JPanel {
 			contentPane.repaint();
 		});
 		
-		exitButton.addActionListener(e -> {
-			frame.dispose();
-		});
+		exitButton.addActionListener(e -> frame.dispose());
 	}
 	
 	
