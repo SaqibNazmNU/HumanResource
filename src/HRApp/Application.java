@@ -5,23 +5,45 @@
 package HRApp;
 
 import javax.swing.*;
-
+import java.util.ArrayList;
 /**
  *
  * @author Saqib Nazm
  */
+
 public class Application extends JFrame {
 	
-	Application(){
-		this.setTitle("Human Resource Management");
-		this.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-		this.getContentPane().add (new HomeView());
-		this.pack();
-		this.setVisible (true);
+	private ArrayList<Employee> employees;
+	
+	Application() {
+		
+		employees = new ArrayList<>();
+		
+		setTitle("Human Resource Management");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		getContentPane().add(new HomeView(this, employees));
+		pack();
+		setVisible(true);
+		setLocationRelativeTo(null);
+		
 	}
 	
-	public static void main (String[] args) {
+	public static void main(String[] args) {
+		changeTheme("Nimbus");
+		new Application();
+	}
 	
+	public static void changeTheme(String theme) {
+		for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+			if (theme.equals(info.getName())) {
+				try {
+					UIManager.setLookAndFeel(info.getClassName());
+				} catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+				         UnsupportedLookAndFeelException ignored) {
+					
+				}
+				break;
+			}
+		}
 	}
 }
-
