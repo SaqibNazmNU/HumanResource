@@ -1,33 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package HRApp;
-
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.time.LocalDate;
 
-/**
- *
- * @author Saqib Nazm
- */
 public class Employee {
 	private String name;
 	private String empId;
 	private int age;
-	private String gender;
+	private Gender gender;
 	private LocalDate startDate;
 	private String level;
 	private String teamInfo;
 	private String position;
 	private String phone;
 	private String email;
-	private BufferedImage photo;
+	private Image photo;
 	
 	public Employee() {
 	}
 	
-	public Employee(String name, String empId, int age, String gender, LocalDate startDate, String level, String teamInfo, String position, String phone, String email, BufferedImage photo) {
+	public Employee(String name, String empId, int age, Gender gender, LocalDate startDate, String level, String teamInfo, String position, String phone, String email, Image photo) {
 		this.name = name;
 		this.empId = empId;
 		this.age = age;
@@ -65,11 +56,11 @@ public class Employee {
 		this.age = age;
 	}
 	
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 	
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 	
@@ -121,7 +112,7 @@ public class Employee {
 		this.email = email;
 	}
 	
-	public BufferedImage getPhoto() {
+	public Image getPhoto() {
 		return photo;
 	}
 	
@@ -130,3 +121,8 @@ public class Employee {
 	}
 }
 
+
+enum Gender{
+	Male,
+	Female,
+}
